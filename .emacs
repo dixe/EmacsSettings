@@ -11,7 +11,7 @@
 (setq backup-directory-alist `(("." . "~/EmacsBackup")))
 
 
-;; add my scripts to emacs
+;; Add keybindings script to init file
 (load "~/.emacs.d/myscripts/keybindings.el")
 
 
