@@ -1,0 +1,11 @@
+bin/
+BUGS
+COPYING
+README
+README.W32
+backups/
+.gem/
+etc/
+info/
+lisp/
+leim/
