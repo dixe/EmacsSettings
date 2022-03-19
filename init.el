@@ -3,7 +3,6 @@
 (setq load-path (append load-path (list "~/emacs.d")))
 (setq load-path (append load-path (list "~/color-theme-6.6.0")))
 
-
 ;; turn on font-lock mode
 (global-font-lock-mode t)
 
@@ -67,6 +66,30 @@
 (show-paren-mode 1)
 
 
+;; default to utf-8
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
 
 ;; disavle narrow to region
 (put 'narrow-to-region 'disabled nil)
+
+
+;; format rust on save
+(defun rust-fomat-on-save-hook ()
+  (when (eq major-mode 'rust-mode)
+    (interactive)
+    (shell-command
+     (format "rustfmt %s"
+             (shell-quote-argument (buffer-file-name))))))
+
+
+
+(setq rust-enable-format-on-save t)
+
+
+;; glsl (shader) mode
+(autoload 'glsl-mode "glsl-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.vert\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.frag\\'" . glsl-mode))

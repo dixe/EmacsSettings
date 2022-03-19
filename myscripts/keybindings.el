@@ -34,5 +34,12 @@
 (global-set-key (kbd "<f6>") (lambda () (interactive) (full-indent)))
 (global-set-key [f12] 'explorer) ;; f12 to open file in explorer
 (global-set-key (kbd "C-z") 'undo) ;; onverride suspend frame for undo
-(global-set-key (kbd "C-q") 'copy-all) ;; quick copy buffer
+;;(global-set-key (kbd "C-q") 'copy-all) ;; quick copy buffer
 (global-set-key (kbd "C-c C-c") 'copy-line) ;; quick copy line
+
+
+(global-set-key (kbd "M-p") 'println!)
+
+(defun println! ()
+  (interactive)
+  (insert "println!(\"{:?}\",") )
