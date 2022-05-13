@@ -43,3 +43,7 @@
 (defun println! ()
   (interactive)
   (insert "println!(\"{:?}\",") )
+
+(defun explorer()
+  (interactive)
+  (shell-command "explorer ."))
